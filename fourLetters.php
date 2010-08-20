@@ -5,7 +5,7 @@
 */
 global $fp;
 
-if (!($fp = fopen('result.csv', 'w'))) {
+if (!($fp = fopen('fourletters.csv', 'w'))) {
     return;
 }
 
@@ -31,12 +31,18 @@ function getCount($fp, $obj) {
 /**
 * Main part of the code : words generation & getCount calls
 */
-$vowels = array('a', 'e', 'i', 'o', 'u', 'y');
+$letters = array ("A","B","C","D","E","F","G","H","I","J","K","L","M",
+"N","O","P","Q","R","S","T","U","V","W","X","Y","Z");
 
-foreach ($vowels as $iVowel) {
-	foreach ($vowels as $aVowel) {
-		getCount($fp, $iVowel.'p'.$aVowel.'d');
+foreach ($letters as $fLetter) {
+	foreach ($letters as $sLetter) {
+		foreach ($letters as $tLetter) {
+			foreach ($letters as $foLetter) {
+				getCount($fp, $fLetter.$sLetter.$tLetter.$foLetter);
+			}
+		}
 	}
 }
+
 
 ?>

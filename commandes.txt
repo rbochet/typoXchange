@@ -1,0 +1,5 @@
+romain@romain-laptop:/tmp/iCopy$ sudo aptitude install php5-cli
+romain@romain-laptop:/tmp/iCopy$ sudo install php5-curl
+romain@romain-laptop:/tmp/iCopy$ sudo aptitude install gnuplot
+romain@romain-laptop:/tmp/iCopy$ aptitude install plotutils
+

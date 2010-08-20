@@ -5,7 +5,7 @@
 */
 global $fp;
 
-if (!($fp = fopen('result.dat', 'w'))) {
+if (!($fp = fopen('result.csv', 'w'))) {
     return;
 }
 
@@ -25,10 +25,12 @@ function getCount($fp, $obj) {
 	$json = json_decode($body, true);
 
 	// Fetch the number of results
-	fprintf($fp, $obj.' '.$json['responseData']['cursor']['estimatedResultCount']."\n");
+	fprintf($fp, $obj.'; '.$json['responseData']['cursor']['estimatedResultCount']."\n");
 }
 
-
+/**
+* Main part of the code : words generation & getCount calls
+*/
 $vowels = array('a', 'e', 'i', 'o', 'u', 'y');
 
 foreach ($vowels as $iVowel) {
